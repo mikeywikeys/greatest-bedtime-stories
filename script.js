@@ -1,4 +1,21 @@
 function generateStory() {
+    const waitingIndicator = document.getElementById('waitingIndicator');
+    waitingIndicator.style.display = 'block';
+    let dotCount = 0;
+    const maxDots = 3;
+    function getDots(count) {
+        let dots = '';
+        for (let i = 0; i < count; i++) {
+          dots += '.';
+        }
+        return dots;
+      }
+      const interval = setInterval(() => {
+        dotCount = (dotCount + 1) % (maxDots + 1);
+        // Use .repeat() if available; otherwise, use getDots()
+        waitingIndicator.textContent = 'Waiting' + ('.'.repeat ? '.'.repeat(dotCount) : getDots(dotCount));
+      }, 500);
+
     // Get values from dropdowns
     const animal = document.getElementById('animal').value;
     const theme = document.getElementById('theme').value;
