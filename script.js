@@ -9,7 +9,7 @@ function generateStory() {
     const payload = { animal, theme, color, length };
   
     // Replace with your actual n8n webhook endpoint
-    fetch('https://mikeywikey.app.n8n.cloud/webhook-test/494df854-ea33-45f4-9a3b-c39c5b9198c5', {
+    fetch('https://mikeywikey.app.n8n.cloud/webhook/494df854-ea33-45f4-9a3b-c39c5b9198c5', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
