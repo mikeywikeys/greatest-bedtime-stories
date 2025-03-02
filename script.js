@@ -20,7 +20,7 @@ function generateStory() {
     .then(data => {
       // Assume data.story contains the generated story
       sessionStorage.setItem('generatedStory', data.story);
-      window.open('story.html', '_blank');
+      window.location.href = 'story.html';
     })
     .catch(error => {
       console.error('Error:', error);
