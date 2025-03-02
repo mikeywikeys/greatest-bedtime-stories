@@ -1,35 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
 body {
-    margin: 0;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: url('fun-animals-bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-  
+  font-family: 'Comic Neue', cursive, sans-serif;
+  background: url('hand-drawn-animals.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+}
+
+/* Container styling for the main page */
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+select, button {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 1em;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #ffcc00;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments for mobile devices */
+@media screen and (max-width: 480px) {
   .container {
-    background-color: rgba(255, 255, 255, 0.9);
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
   }
-  
-  label {
-    display: block;
-    margin-top: 15px;
-  }
-  
   select, button {
-    margin-top: 5px;
-    padding: 10px;
-    font-size: 1em;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 0.9em;
   }
-  
-  button {
-    background-color: #ffcc00;
-    cursor: pointer;
-  }
-  
+}
