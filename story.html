@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Bedtime Story</title>
+  <style>
+    body {
+      /* Set the background to a GIF that covers the entire screen */
+      background: url('animal-shootingstars.gif') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    /* Story container is centered, limited in width, and semi-transparent */
+    .story-container {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 80px auto; /* Added extra margin at top for back button */
+      max-width: 600px;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    /* Back button styled and fixed in the top left corner */
+    #backButton {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 15px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+      font-size: 1em;
+    }
+    /* Save button inside the container */
+    #saveButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    #storyContent {
+      margin-top: 40px; /* leave space for the save button */
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back button is outside the container for consistent navigation -->
+  <button id="backButton" onclick="goBack()">Back</button>
+  <div class="story-container">
+    <!-- Save button placed at top right within the container -->
+    <button id="saveButton" onclick="saveStory()">Save Story</button>
+    <div id="storyContent"></div>
+  </div>
+  <script>
+    function goBack() {
+      // Use history.back() to return to the previous page or specify a URL
+      history.back();
+      // Alternatively, you could use: window.location.href = 'index.html';
+    }
+  </script>
+  <script src="story.js"></script>
+</body>
+</html>

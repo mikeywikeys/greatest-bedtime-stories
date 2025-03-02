@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saved Stories</title>
+  <style>
+    body {
+      /* Background set to a hand-drawn image of animals with vibrant colors */
+      background: url('hand-drawn-animals.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    /* Back button styling */
+    #backButton {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 15px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+      font-size: 1em;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .story-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .story-item {
+      margin: 10px 0;
+      padding: 15px;
+      background: #ffcc00;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 1.1em;
+    }
+    .story-item:hover {
+      background: #ffdb4d;
+    }
+    .no-stories {
+      text-align: center;
+      font-size: 1.2em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back button that directs the user to index.html -->
+  <button id="backButton" onclick="goBack()">Back</button>
+  
+  <h1>Saved Stories</h1>
+  <ul id="storyList" class="story-list"></ul>
+
+  <script>
+    function goBack() {
+      // Redirect to the index.html page
+      window.location.href = 'index.html';
+    }
+  </script>
+  <script src="saved-stories.js"></script>
+</body>
+</html>

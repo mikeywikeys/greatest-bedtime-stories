@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bedtime Story Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      /* Background set to a hand-drawn image of animals with vibrant colors */
+      background: url('hand-drawn-animals.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    select, button {
+      margin-top: 5px;
+      padding: 10px;
+      font-size: 1em;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #ffcc00;
+      cursor: pointer;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bedtime Story Generator</h1>
+    <form id="storyForm">
+      <label for="animal">Select Animal:</label>
+      <select id="animal">
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="rabbit">Rabbit</option>
+        <!-- Additional animals -->
+      </select>
+      <br>
+      <label for="theme">Select Theme:</label>
+      <select id="theme">
+        <option value="superhero">Superhero</option>
+        <option value="adventure">Adventure</option>
+        <option value="fairytale">Fairytale</option>
+        <!-- Additional themes -->
+      </select>
+      <br>
+      <label for="color">Favorite Color:</label>
+      <select id="color">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <!-- Additional colors -->
+      </select>
+      <br>
+      <label for="length">Story Length:</label>
+      <select id="length">
+        <option value="3">3 minutes</option>
+        <option value="5">5 minutes</option>
+        <option value="10">10 minutes</option>
+      </select>
+    </form>
+    <div class="button-container">
+      <button type="button" onclick="generateStory()">Generate Story</button>
+      <button type="button" onclick="window.location.href='saved-stories.html'">Saved Stories</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
