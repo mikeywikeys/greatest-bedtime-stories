@@ -50,7 +50,7 @@ body {
   margin-top: 40px;
   font-size: 1.1em;
   line-height: 1.5;
-  /* Ensures same font for story text */
+/* Ensures same font for story text */
   font-family: 'Comic Neue', cursive, sans-serif;
 }
 
@@ -82,5 +82,7 @@ body {
   }
   #storyContent {
     font-size: 1em;
+    /* Ensures same font for story text */
+    font-family: 'Comic Neue', cursive, sans-serif;
   }
 }
