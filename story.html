@@ -11,17 +11,26 @@
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
     }
-    /* Story container is centered, limited in width, and semi-transparent */
     .story-container {
       background-color: rgba(255, 255, 255, 0.7);
       padding: 20px;
       border-radius: 10px;
-      margin: 80px auto; /* Added extra margin at top for back button */
+      margin: 80px auto;
       max-width: 600px;
       position: relative;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-    /* Back button styled and fixed in the top left corner */
+    #saveButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
     #backButton {
       position: fixed;
       top: 20px;
@@ -34,40 +43,45 @@
       z-index: 1000;
       font-size: 1em;
     }
-    /* Save button inside the container */
-    #saveButton {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 5px 10px;
-      background-color: #ffcc00;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 0.9em;
-    }
     #storyContent {
-      margin-top: 40px; /* leave space for the save button */
+      margin-top: 40px;
       font-size: 1.1em;
       line-height: 1.5;
+    }
+    /* In-app notification styling */
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: none;
+      z-index: 2000;
+      font-size: 1em;
     }
   </style>
 </head>
 <body>
-  <!-- Back button is outside the container for consistent navigation -->
+  <!-- Back button for navigation -->
   <button id="backButton" onclick="goBack()">Back</button>
   <div class="story-container">
-    <!-- Save button placed at top right within the container -->
+    <!-- Save button inside the container -->
     <button id="saveButton" onclick="saveStory()">Save Story</button>
     <div id="storyContent"></div>
   </div>
+
+  <!-- In-app notification container -->
+  <div id="notification" class="notification"></div>
+
+  <script src="story.js"></script>
   <script>
     function goBack() {
-      // Use history.back() to return to the previous page or specify a URL
-      history.back();
-      // Alternatively, you could use: window.location.href = 'index.html';
+      // Redirect back to index.html (or any desired page)
+      window.location.href = 'index.html';
     }
   </script>
-  <script src="story.js"></script>
 </body>
 </html>
