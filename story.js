@@ -2,7 +2,18 @@
 const storyContent = sessionStorage.getItem('generatedStory') || "No story generated.";
 document.getElementById('storyContent').innerText = storyContent;
 
-// Save story function using localStorage
+// Function to show in-app notifications
+function showNotification(message) {
+  const notificationDiv = document.getElementById('notification');
+  notificationDiv.textContent = message;
+  notificationDiv.style.display = 'block';
+  // Hide notification after 3 seconds
+  setTimeout(() => {
+    notificationDiv.style.display = 'none';
+  }, 3000);
+}
+
+// Save story function using localStorage with in-app notification
 function saveStory() {
   // Retrieve the current saved stories or initialize an empty array
   let savedStories = JSON.parse(localStorage.getItem('savedStories')) || [];
@@ -13,11 +24,12 @@ function saveStory() {
     savedAt: new Date().toISOString()
   };
 
-  // Add the new story to the array
+  // Add the new story to the saved stories array
   savedStories.push(storyToSave);
 
-  // Store the updated array back into localStorage
+  // Save the updated array back into localStorage
   localStorage.setItem('savedStories', JSON.stringify(savedStories));
   
-  alert("Story saved successfully!");
+  // Show in-app notification instead of browser alert
+  showNotification("Story saved successfully!");
 }
