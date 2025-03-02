@@ -5,7 +5,6 @@
   <!-- Ensure proper scaling on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bedtime Story Generator</title>
-  <!-- Load Comic Neue from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -14,7 +13,7 @@
       background: url('hand-drawn-animals.jpg') no-repeat center center fixed;
       background-size: cover;
       margin: 0;
-      font-family: 'Comic Neue', cursive, sans-serif;
+      font-family: 'Comic Neue', sans-serif;
     }
     .container {
       background-color: rgba(255, 255, 255, 0.9);
@@ -46,11 +45,30 @@
       gap: 10px;
       margin-top: 20px;
     }
+    /* Waiting indicator styling */
+    #waitingIndicator {
+      margin-top: 20px;
+      font-size: 1.1em;
+      font-weight: bold;
+      display: none;
+    }
+    /* Responsive adjustments */
+    @media screen and (max-width: 480px) {
+      .container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+      }
+      select, button {
+        padding: 8px;
+        font-size: 0.9em;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Greatest Bedtime Stories!</h1>
+    <h1>Bedtime Story Generator</h1>
     <form id="storyForm">
       <label for="animal">Select Animal:</label>
       <select id="animal">
@@ -87,6 +105,8 @@
       <button type="button" onclick="generateStory()">Generate Story</button>
       <button type="button" onclick="window.location.href='saved-stories.html'">Saved Stories</button>
     </div>
+    <!-- Waiting indicator (hidden by default) -->
+    <div id="waitingIndicator">Waiting</div>
   </div>
   <script src="script.js"></script>
 </body>
