@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Comic Neue', cursive, sans-serif;
-  background: url('background.gif') no-repeat center center fixed;
+  background: url('animal-shootingstars.gif') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
 }
@@ -50,6 +50,8 @@ body {
   margin-top: 40px;
   font-size: 1.1em;
   line-height: 1.5;
+  /* Ensures same font for story text */
+  font-family: 'Comic Neue', cursive, sans-serif;
 }
 
 /* In-app notification styling */
